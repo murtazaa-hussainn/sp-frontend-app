@@ -14,8 +14,7 @@ RUN npm install
 COPY . .
 
 # Set environment variables
-ARG VITE_BACKEND_URL
-ENV VITE_BACKEND_URL=$VITE_BACKEND_URL
+ENV VITE_BACKEND_URL=${VITE_BACKEND_URL}
 
 # Build the Next.js application
 RUN npm run build
@@ -24,4 +23,4 @@ RUN npm run build
 EXPOSE 4000
 
 # Start the application
-CMD ["npm", "start"]
+CMD ["npm", "preview"]
